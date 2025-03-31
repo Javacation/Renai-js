@@ -17,18 +17,19 @@ export const genb = function* () {
   yield Error3.of('');
   yield Error4.of('');
   yield Error5.of('');
+  return '+_+' as const;
 }
 
 describe('Renai', () => {
   it('renai test', () => {
     const a = renai(genb, {
-      Error1: (err: Error1): number => {
+      Error1: (err: Error1) => {
         expect(err).toBeInstanceOf(Error1);
-        return 1;
+        return false;
       },
       Error2: (err: Error2) => {
         expect(err).toBeInstanceOf(Error2);
-        return 2;
+        return 'sadsad';
       },
       Error3: (err: Error3) => {
         expect(err).toBeInstanceOf(Error3);
@@ -41,9 +42,12 @@ describe('Renai', () => {
       Error5: (err: Error5) => {
         expect(err).toBeInstanceOf(Error5);
         return 5;
-      }
-
+      },
+      // UnknownError: (err: LabeledError<string>) => {
+      //   expect(err).toBeInstanceOf(LabeledError);
+      // }
     });
+    
     expect(renai(genb, {})).toBeInstanceOf(Error1);
   });
 })

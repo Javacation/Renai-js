@@ -34,15 +34,21 @@ export class UnknownError extends LabeledError<'UnknownError'> {}
 /** 
  * @description Renai return may be error Handling function return type or Generator return type. (or null)
 */
-export function renai <Nxt, Rtn, Yld extends LabeledError<string>>(
+export function renai <
+  Nxt, 
+  Rtn, 
+  Yld extends LabeledError<string>, 
+  ErrMap extends (Partial<ExtractLabelMap<Yld> & Record<'UnknownError', (error: UnknownError) => unknown>>)
+>(
   generator: (...args: any[])=> Generator<Yld, Rtn, Nxt>,
-  errorHandler: Partial<ExtractLabelMap<Yld> & Record<'UnknownError', (error: UnknownError) => unknown>>
-): unknown {
+  errorHandler: ErrMap 
+): (
+  Rtn | undefined | ReturnType<Exclude<typeof errorHandler[keyof typeof errorHandler], undefined>>
+) {
   let result: unknown = null;
   errorHandler = {
     UnknownError: (error: UnknownError) => {
-      // console.error('UnknownError:', error.message);
-      return error;
+      console.error(error);
     },
     ...errorHandler
   };
@@ -70,6 +76,6 @@ export function renai <Nxt, Rtn, Yld extends LabeledError<string>>(
     }
   }
   finally {
-    return result;
+    return result as ( Rtn | ReturnType<Exclude<typeof errorHandler[keyof typeof errorHandler], undefined>> );
   }
 }

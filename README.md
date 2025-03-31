@@ -83,8 +83,6 @@ catch(e) {
 import { renai, UnknownError } from 'renai-js';
 import { randomOops, T_TError, X_XError, U_UError } from './oops';
 
-/** Sorry, I'm not very good at TypeScript so I don't know how to extract the return value type, so it will come down to unknown. */
-/** I'll try it later when I get a chance. */
 const result: '+_+' | number | string | boolean | UnknownError = renai(
   randomOops,
   {
