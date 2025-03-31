@@ -5,7 +5,7 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   plugins: [
     dts({
-      tsconfigPath: './tsconfig.build.json',
+      tsconfigPath: './tsconfig.build.json'
     })
   ],
   resolve: {
@@ -19,13 +19,13 @@ export default defineConfig({
       name: 'renai-js',
       fileName: (format) => {
         if( format === 'cjs' ) {
-          return 'renai.cjs';
+          return 'index.cjs';
         }
         if( format === 'umd' ) {
-          return 'renai.umd.js';
+          return 'index.umd.js';
         }
 
-        return 'renai.js';
+        return 'index.mjs';
       },
       formats: ['es', 'umd', 'cjs']
     },
