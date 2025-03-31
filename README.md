@@ -4,6 +4,7 @@ Renai-js was created to simplify the difficult-to-see try-catch blocks.
 # Feature
 - Replace try-catch in typescript
 - Based on generator function ※ function*() { ... }
+- I think I got the name wrong
 
 # Why?
 - In TypeScript(or JS), when writing code, can't know which function might cause which error.   
