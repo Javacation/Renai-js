@@ -1,0 +1,15 @@
+{
+  "name": "renai",
+  "version": "0.0.0",
+  "description": "no more throw",
+  "keywords": [
+    "try-catch"
+  ],
+  "license": "MIT",
+  "author": "akdltls",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
