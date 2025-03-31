@@ -16,7 +16,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'Renai',
+      name: 'renai-js',
       fileName: (format) => {
         if( format === 'cjs' ) {
           return 'renai.cjs';
@@ -28,7 +28,8 @@ export default defineConfig({
         return 'renai.js';
       },
       formats: ['es', 'umd', 'cjs']
-    }
+    },
+    outDir: 'lib',
   },
   test: {
 
