@@ -83,7 +83,8 @@ catch(e) {
 import { renai, UnknownError } from 'renai-js';
 import { randomOops, T_TError, X_XError, U_UError } from './oops';
 
-const result: '+_+' | number | string | boolean | UnknownError = renai(
+/** if you want literal type attach 'as const' behind return value or set literal return type. */
+const result: number | string | boolean | UnknownError = renai(
   randomOops,
   {
     'T_TError': (error: T_TError): number => { /** error handling1 */ },
