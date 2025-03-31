@@ -21,8 +21,8 @@ export default defineConfig({
         if( format === 'cjs' ) {
           return 'renai.cjs';
         }
-        if( format === 'es' ) {
-          return 'renai.mjs';
+        if( format === 'umd' ) {
+          return 'renai.umd.js';
         }
 
         return 'renai.js';

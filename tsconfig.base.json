@@ -20,6 +20,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "declaration": true,
-    "declarationDir": "./dist",
+    "declarationDir": "./lib"
   },
 }
