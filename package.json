@@ -1,6 +1,6 @@
 {
   "name": "renai-js",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "no more throw",
   "keywords": [
     "try-catch",
@@ -11,11 +11,11 @@
   "license": "MIT",
   "author": "akdltls",
   "type": "module",
-  "main": "lib/index.mjs",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "exports": {
     ".": {
-      "import": "./lib/index.mjs",
+      "import": "./lib/index.js",
       "require": "./lib/index.cjs"
     }
   },
