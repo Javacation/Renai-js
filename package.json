@@ -11,12 +11,12 @@
   "license": "MIT",
   "author": "akdltls",
   "type": "module",
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.mjs",
+  "types": "lib/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs"
     }
   },
   "scripts": {
@@ -24,7 +24,7 @@
     "prepack": "npm run build",
     "build": "npm run clean && npm run build:tsc",
     "build:tsc": "vite build",
-    "clean": "rimraf dist"
+    "clean": "rimraf lib"
   },
   "devDependencies": {
     "rimraf": "^6.0.1",

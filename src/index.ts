@@ -31,11 +31,14 @@ export class LabeledError<T> extends Error implements Label<T> {
 
 export class UnknownError extends LabeledError<'UnknownError'> {}
 
-export function once <Nxt, Rtn, Yld extends LabeledError<string>>(
+/** 
+ * @description Renai return may be error Handling function return type or Generator return type. (or null)
+*/
+export function renai <Nxt, Rtn, Yld extends LabeledError<string>>(
   generator: (...args: any[])=> Generator<Yld, Rtn, Nxt>,
   errorHandler: Partial<ExtractLabelMap<Yld> & Record<'UnknownError', (error: UnknownError) => unknown>>
-): Rtn | Yld | null {
-  let result: any = null;
+): unknown {
+  let result: unknown = null;
   errorHandler = {
     UnknownError: (error: UnknownError) => {
       // console.error('UnknownError:', error.message);
