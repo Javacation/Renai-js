@@ -138,3 +138,4 @@ export async function renaiAsync<
     return result as ( Rtn | undefined | ReturnType<Exclude<typeof errorHandler[keyof typeof errorHandler], undefined>> );
   }
 }
+

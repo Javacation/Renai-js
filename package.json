@@ -1,6 +1,6 @@
 {
   "name": "renai-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "no more throw",
   "keywords": [
     "try-catch",
@@ -16,7 +16,8 @@
   "exports": {
     ".": {
       "import": "./lib/index.js",
-      "require": "./lib/index.cjs"
+      "require": "./lib/index.cjs",
+      "types": "./lib/index.d.ts"
     }
   },
   "scripts": {
